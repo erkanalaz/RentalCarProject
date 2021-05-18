@@ -1,0 +1,3 @@
+Marka Model bilgilerinin databaseden çekilmesi
+Sözleþme çýktý alýnmasý
+Sözleþmede cbxcars da boþ olanlar sadece gelmeli
