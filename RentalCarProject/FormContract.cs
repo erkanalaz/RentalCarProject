@@ -287,5 +287,11 @@ namespace RentalCarProject
         {
 
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            FormContractPrint formContractPrint=new FormContractPrint();
+            formContractPrint.ShowDialog();
+        }
     }
 }

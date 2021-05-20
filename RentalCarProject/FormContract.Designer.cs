@@ -45,6 +45,7 @@ namespace RentalCarProject
             this.tbxCustomerName = new System.Windows.Forms.TextBox();
             this.tbxIdSearch = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dtpGiveBack = new System.Windows.Forms.DateTimePicker();
@@ -225,6 +226,7 @@ namespace RentalCarProject
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnPrint);
             this.groupBox2.Controls.Add(this.btnCalculate);
             this.groupBox2.Controls.Add(this.btnClear);
             this.groupBox2.Controls.Add(this.dtpGiveBack);
@@ -255,6 +257,17 @@ namespace RentalCarProject
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Araç Bilgileri";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrint.Location = new System.Drawing.Point(637, 241);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(127, 47);
+            this.btnPrint.TabIndex = 5;
+            this.btnPrint.Text = "Yazdır";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnCalculate
             // 
@@ -479,6 +492,10 @@ namespace RentalCarProject
             // 
             // dgvContract
             // 
+            this.dgvContract.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dgvContract.BackgroundColor = System.Drawing.Color.White;
             this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContract.Location = new System.Drawing.Point(357, 360);
@@ -617,5 +634,6 @@ namespace RentalCarProject
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox tbxIdNumber;
         private System.Windows.Forms.TextBox tbxPhone;
+        private System.Windows.Forms.Button btnPrint;
     }
 }
