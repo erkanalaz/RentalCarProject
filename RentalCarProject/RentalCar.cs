@@ -110,5 +110,21 @@ namespace RentalCarProject
             label.Text = "Toplam tutar : " + sqlCommand.ExecuteScalar() + " TL";
             sqlConnection.Close();
         }
+
+
+        public void getBrandsFromDatabase(ComboBox comboBox, string query)
+        {
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                comboBox.Items.Add(sqlDataReader["BrandName"]);
+            }
+            sqlConnection.Close();
+        }
+
+
+
     }
 }

@@ -15,6 +15,9 @@ namespace RentalCarProject
         public FormCarList()
         {
             InitializeComponent();
+
+            string brandListQuery = "select BrandName from Brands";
+            rentalCar.getBrandsFromDatabase(cbxBrand,brandListQuery);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

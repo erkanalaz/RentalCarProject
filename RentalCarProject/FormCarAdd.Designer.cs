@@ -53,6 +53,7 @@ namespace RentalCarProject
             this.button3 = new System.Windows.Forms.Button();
             this.pbxCarAdd = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnChangeBrands = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCarAdd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,20 +152,6 @@ namespace RentalCarProject
             // cbxBrand
             // 
             this.cbxBrand.FormattingEnabled = true;
-            this.cbxBrand.Items.AddRange(new object[] {
-            "Audi",
-            "BMW",
-            "Fiat",
-            "Ford",
-            "Honda",
-            "Mercedes - Benz",
-            "Opel",
-            "Peugeot",
-            "Renault",
-            "Seat",
-            "Skoda",
-            "Toyota",
-            "Volkswagen"});
             this.cbxBrand.Location = new System.Drawing.Point(185, 114);
             this.cbxBrand.Name = "cbxBrand";
             this.cbxBrand.Size = new System.Drawing.Size(177, 28);
@@ -237,6 +224,7 @@ namespace RentalCarProject
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.ımageList1.Images.SetKeyName(0, "add-icon.png");
             this.ımageList1.Images.SetKeyName(1, "delete-icon.png");
+            this.ımageList1.Images.SetKeyName(2, "Actions-document-edit-icon.png");
             // 
             // button2
             // 
@@ -282,12 +270,30 @@ namespace RentalCarProject
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnChangeBrands
+            // 
+            this.btnChangeBrands.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangeBrands.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnChangeBrands.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnChangeBrands.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChangeBrands.ImageIndex = 2;
+            this.btnChangeBrands.ImageList = this.ımageList1;
+            this.btnChangeBrands.Location = new System.Drawing.Point(935, 649);
+            this.btnChangeBrands.Name = "btnChangeBrands";
+            this.btnChangeBrands.Size = new System.Drawing.Size(240, 50);
+            this.btnChangeBrands.TabIndex = 5;
+            this.btnChangeBrands.Text = "Araç Markalarını Düzenle";
+            this.btnChangeBrands.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangeBrands.UseVisualStyleBackColor = false;
+            this.btnChangeBrands.Click += new System.EventHandler(this.btnChangeBrands_Click);
+            // 
             // FormCarAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1229, 711);
+            this.Controls.Add(this.btnChangeBrands);
             this.Controls.Add(this.pbxCarAdd);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -341,5 +347,6 @@ namespace RentalCarProject
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pbxCarAdd;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnChangeBrands;
     }
 }

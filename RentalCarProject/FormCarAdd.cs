@@ -15,6 +15,11 @@ namespace RentalCarProject
         public FormCarAdd()
         {
             InitializeComponent();
+
+            string brandListQuery = "select BrandName from Brands";
+            SqlDataAdapter sqlDataAdapter=new SqlDataAdapter();
+            rentalCar.getBrandsFromDatabase(cbxBrand,brandListQuery);
+            
         }
 
         private void button1_Click(object sender, EventArgs e) //Car Add button
@@ -125,6 +130,12 @@ namespace RentalCarProject
         private void cbxSerie_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnChangeBrands_Click(object sender, EventArgs e)
+        {
+            FormBrands formBrands=new FormBrands();
+            formBrands.ShowDialog();
         }
     }
 }

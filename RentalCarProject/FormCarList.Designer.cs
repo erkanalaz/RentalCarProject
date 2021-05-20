@@ -106,20 +106,6 @@ namespace RentalCarProject
             // cbxBrand
             // 
             this.cbxBrand.FormattingEnabled = true;
-            this.cbxBrand.Items.AddRange(new object[] {
-            "Audi",
-            "BMW",
-            "Fiat",
-            "Ford",
-            "Honda",
-            "Mercedes - Benz",
-            "Opel",
-            "Peugeot",
-            "Renault",
-            "Seat",
-            "Skoda",
-            "Toyota",
-            "Volkswagen"});
             this.cbxBrand.Location = new System.Drawing.Point(143, 120);
             this.cbxBrand.Name = "cbxBrand";
             this.cbxBrand.Size = new System.Drawing.Size(177, 28);
