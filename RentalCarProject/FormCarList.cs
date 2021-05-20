@@ -194,7 +194,7 @@ namespace RentalCarProject
                 }
                 else if (cbxCarFilter.SelectedIndex == 2)
                 {
-                    string carFilterQuery = "select * from Cars where Status='BOŞ'";
+                    string carFilterQuery = "select * from Cars where Status='BOS'";
                     SqlDataAdapter carFilterDataAdapter = new SqlDataAdapter();
                     dgvCarList.DataSource = rentalCar.list(carFilterDataAdapter, carFilterQuery);
 

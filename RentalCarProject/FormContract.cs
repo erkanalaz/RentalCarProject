@@ -183,23 +183,23 @@ namespace RentalCarProject
         private void dgvContract_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow contractDataGridViewRow = dgvContract.CurrentRow;
-            tbxIdNumber.Text = contractDataGridViewRow.Cells[0].Value.ToString();
-            tbxCustomerName.Text = contractDataGridViewRow.Cells[1].Value.ToString();
-            tbxPhone.Text = contractDataGridViewRow.Cells[2].Value.ToString();
-            tbxLicenceNumber.Text = contractDataGridViewRow.Cells[3].Value.ToString();
-            tbxLicenceDate.Text = contractDataGridViewRow.Cells[4].Value.ToString();
-            tbxLicencePlace.Text = contractDataGridViewRow.Cells[5].Value.ToString();
-            cbxCars.Text = contractDataGridViewRow.Cells[6].Value.ToString();
-            tbxBrand.Text = contractDataGridViewRow.Cells[7].Value.ToString();
-            tbxSerie.Text = contractDataGridViewRow.Cells[8].Value.ToString();
-            tbxModel.Text = contractDataGridViewRow.Cells[9].Value.ToString();
-            tbxColor.Text = contractDataGridViewRow.Cells[10].Value.ToString();
-            cbxRentalType.Text = contractDataGridViewRow.Cells[11].Value.ToString();
-            tbxRentalPrice.Text = contractDataGridViewRow.Cells[12].Value.ToString();
-            tbxRentalDay.Text = contractDataGridViewRow.Cells[13].Value.ToString();
-            tbxRentalTotalPrice.Text = contractDataGridViewRow.Cells[14].Value.ToString();
-            dtpGiveIn.Text = contractDataGridViewRow.Cells[15].Value.ToString();
-            dtpGiveBack.Text = contractDataGridViewRow.Cells[16].Value.ToString();
+            tbxIdNumber.Text = contractDataGridViewRow.Cells[1].Value.ToString();
+            tbxCustomerName.Text = contractDataGridViewRow.Cells[2].Value.ToString();
+            tbxPhone.Text = contractDataGridViewRow.Cells[3].Value.ToString();
+            tbxLicenceNumber.Text = contractDataGridViewRow.Cells[4].Value.ToString();
+            tbxLicenceDate.Text = contractDataGridViewRow.Cells[5].Value.ToString();
+            tbxLicencePlace.Text = contractDataGridViewRow.Cells[6].Value.ToString();
+            cbxCars.Text = contractDataGridViewRow.Cells[7].Value.ToString();
+            tbxBrand.Text = contractDataGridViewRow.Cells[8].Value.ToString();
+            tbxSerie.Text = contractDataGridViewRow.Cells[9].Value.ToString();
+            tbxModel.Text = contractDataGridViewRow.Cells[10].Value.ToString();
+            tbxColor.Text = contractDataGridViewRow.Cells[11].Value.ToString();
+            cbxRentalType.Text = contractDataGridViewRow.Cells[12].Value.ToString();
+            tbxRentalPrice.Text = contractDataGridViewRow.Cells[13].Value.ToString();
+            tbxRentalDay.Text = contractDataGridViewRow.Cells[14].Value.ToString();
+            tbxRentalTotalPrice.Text = contractDataGridViewRow.Cells[15].Value.ToString();
+            dtpGiveIn.Text = contractDataGridViewRow.Cells[16].Value.ToString();
+            dtpGiveBack.Text = contractDataGridViewRow.Cells[17].Value.ToString();
 
         }
 
@@ -239,7 +239,7 @@ namespace RentalCarProject
                 SqlCommand sqlCommandStatus=new SqlCommand();
                 rentalCar.add_delete_update(sqlCommandStatus,carTakeBackStatusQuery);
 
-                string saleQuery = "insert into Sales (IdNumber,CustomerName,LicencePlate,Brand,Serie,Model,Color,RentalDay,RentalType,RentalPrice,RentalTotalPrice,Date1,Date2) values(@IdNumber,@CustomerName,@LicencePlate,@Brand,@Serie,@Model,@Color,@RentalDay,@RentalType,@RentalPrice,@RentalTotalPrice,@Date1,@Date2)";
+                string saleQuery = "insert into Sales (IdNumber,CustomerName,LicencePlate,Brand,Serie,Model,Color,RentalDay,RentalPrice,RentalTotalPrice,Date1,Date2) values(@IdNumber,@CustomerName,@LicencePlate,@Brand,@Serie,@Model,@Color,@RentalDay,@RentalPrice,@RentalTotalPrice,@Date1,@Date2)";
                 SqlCommand contractSaveCommand = new SqlCommand();
                 contractSaveCommand.Parameters.AddWithValue("@IdNumber", tbxIdNumber.Text);
                 contractSaveCommand.Parameters.AddWithValue("@CustomerName", tbxCustomerName.Text);
@@ -249,7 +249,6 @@ namespace RentalCarProject
                 contractSaveCommand.Parameters.AddWithValue("@Model", tbxModel.Text);
                 contractSaveCommand.Parameters.AddWithValue("@Color", tbxColor.Text);
                 contractSaveCommand.Parameters.AddWithValue("@RentalDay", int.Parse(tbxRentalDay.Text));
-                contractSaveCommand.Parameters.AddWithValue("@RentalType", cbxRentalType.Text);
                 contractSaveCommand.Parameters.AddWithValue("@RentalPrice", int.Parse(tbxRentalPrice.Text));
                 contractSaveCommand.Parameters.AddWithValue("@RentalTotalPrice", int.Parse(tbxRentalTotalPrice.Text));
                 contractSaveCommand.Parameters.AddWithValue("@Date1", dtpGiveIn.Text);

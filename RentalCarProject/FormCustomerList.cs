@@ -68,9 +68,17 @@ namespace RentalCarProject
 
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
-            string customerSearchQuery = "select * from Customers where IdNumber='" + tbxSearch.Text + "'";
+            if (tbxSearch.Text=="")
+            {
+                CustomerList();
+            }
+            else
+            {
+                 string customerSearchQuery = "select * from Customers where IdNumber='" + tbxSearch.Text + "'";
             SqlDataAdapter customerSearchDataAdapter=new SqlDataAdapter();
             dgvCustomerList.DataSource=rentalCar.list(customerSearchDataAdapter, customerSearchQuery);
+     
+            }
         }
 
         private void dgvCustomerList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
