@@ -19,7 +19,10 @@ namespace RentalCarProject
             string brandListQuery = "select BrandName from Brands";
             SqlDataAdapter sqlDataAdapter=new SqlDataAdapter();
             rentalCar.getBrandsFromDatabase(cbxBrand,brandListQuery);
-            
+
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e) //Car Add button
@@ -67,65 +70,12 @@ namespace RentalCarProject
         
         private void cbxBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                cbxSerie.Items.Clear();
-                if (cbxBrand.SelectedIndex==0)
-                {
-                    cbxSerie.Items.Add("A4");
-                    cbxSerie.Items.Add("A5");
-                    cbxSerie.Items.Add("A6");
-                    cbxSerie.Items.Add("Q7");
 
+            cbxSerie.Items.Clear();
+            //string serieListQuery = "select SeriName from Series inner join Brands on Series.BrandId=Brands.Id";
+            string serieListQuery = "select SeriName from Series where BrandId=(select Id from Brands where BrandName='" + cbxBrand.SelectedItem+"' )";
+            rentalCar.getSeriesFromDb(cbxSerie, serieListQuery);
 
-                }
-                else if (cbxBrand.SelectedIndex == 1)
-                {
-                    cbxSerie.Items.Add("X3");
-                    cbxSerie.Items.Add("318");
-                    cbxSerie.Items.Add("520");
-                    cbxSerie.Items.Add("740");
-                }
-                else if (cbxBrand.SelectedIndex == 2)
-                {
-                    cbxSerie.Items.Add("Fiorino");
-                    cbxSerie.Items.Add("Linea");
-                    cbxSerie.Items.Add("Egea");
-                    cbxSerie.Items.Add("Doblo");
-                }
-                else if (cbxBrand.SelectedIndex == 3)
-                {
-                    cbxSerie.Items.Add("Focus");
-                    cbxSerie.Items.Add("Fiesta");
-                    cbxSerie.Items.Add("Mondeo");
-                    cbxSerie.Items.Add("Kuga");
-                }
-                else if (cbxBrand.SelectedIndex == 4)
-                {
-                    cbxSerie.Items.Add("Civic");
-                    cbxSerie.Items.Add("CRV");
-                    cbxSerie.Items.Add("Jazz");
-                    cbxSerie.Items.Add("Accord");
-                }
-                else if (cbxBrand.SelectedIndex == 5)
-                {
-                    cbxSerie.Items.Add("E200");
-                    cbxSerie.Items.Add("C180");
-                    cbxSerie.Items.Add("CLA200");
-                    cbxSerie.Items.Add("CLS220");
-                }
-                else if (cbxBrand.SelectedIndex == 6)
-                {
-                    cbxSerie.Items.Add("Astra");
-                    cbxSerie.Items.Add("Vectra");
-                    cbxSerie.Items.Add("Corsa");
-                    cbxSerie.Items.Add("GrandlandX");
-                }
-            }
-            catch
-            {
-                ;
-            }
         }
         private void cbxSerie_SelectedIndexChanged(object sender, EventArgs e)
         {

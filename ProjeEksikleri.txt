@@ -1,19 +1,2 @@
-Marka Model bilgilerinin databaseden çekilmesi
 Sözleþme çýktý alýnmasý
-
-
-
-Audi
-BMW
-Fiat
-Ford
-Honda
-Mercedes - Benz
-Opel
-Peugeot
-Renault
-Seat
-Skoda
-Toyota
-Volkswagen
 

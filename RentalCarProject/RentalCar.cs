@@ -123,7 +123,17 @@ namespace RentalCarProject
             }
             sqlConnection.Close();
         }
-
+        public void getSeriesFromDb(ComboBox comboBox, string query)
+        {
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                comboBox.Items.Add(sqlDataReader["SeriName"]);
+            }
+            sqlConnection.Close();
+        }
 
 
     }
